@@ -1,0 +1,42 @@
+--- a/src/junit/com/jogamp/common/util/TestTempJarCache.java
++++ b/src/junit/com/jogamp/common/util/TestTempJarCache.java
+@@ -162,6 +162,7 @@ public class TestTempJarCache extends Ju
+         Assert.assertTrue(f.exists());
+     }
+ 
++    @org.junit.Ignore
+     @Test
+     public void testTempJarCache00Init() throws IOException {
+         // may already been initialized by other test
+@@ -172,6 +173,7 @@ public class TestTempJarCache extends Ju
+         Assert.assertTrue(TempJarCache.isInitialized());
+     }
+ 
++    @org.junit.Ignore
+     @Test
+     public void testTempJarCache01LoadAllTestManifestAndClass() throws IOException, SecurityException, IllegalArgumentException, URISyntaxException {
+         if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }
+@@ -194,6 +196,7 @@ public class TestTempJarCache extends Ju
+         Assert.assertEquals(f0, f1);
+     }
+ 
++    @org.junit.Ignore
+     @Test
+     public void testTempJarCache02AddNativeLibs() throws IOException, IllegalArgumentException, URISyntaxException {
+         if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }
+@@ -214,6 +217,7 @@ public class TestTempJarCache extends Ju
+         Assert.assertTrue(f.exists());
+     }
+ 
++    @org.junit.Ignore
+     @Test
+     public void testTempJarCache04aSameClassLoader() throws IOException {
+         assertTempFileCachesIndividualInstances(true, TempJarCache.getTempFileCache(), TempJarCache.getTempFileCache());
+@@ -224,6 +228,7 @@ public class TestTempJarCache extends Ju
+         assertTempFileCachesIndividualInstances(true, fileCache2, fileCache3);
+     }
+ 
++    @org.junit.Ignore
+     @Test
+     public void testTempJarCache04bDiffClassLoader() throws IOException, IllegalArgumentException, URISyntaxException {
+         if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }

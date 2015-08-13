@@ -1,0 +1,136 @@
+--- a/make/gluegen-cpptasks-base.xml
++++ b/make/gluegen-cpptasks-base.xml
+@@ -1164,17 +1164,14 @@
+     <!-- Unix linker configuration -->
+ 
+     <linker id="linker.cfg.linux" name="${gcc.compat.compiler}">
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.linux.x86" name="${gcc.compat.compiler}">
+       <linkerarg value="-m32"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.linux.amd64" name="${gcc.compat.compiler}">
+       <linkerarg value="-m64"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <!-- Using default compiler settings - utilize:
+@@ -1185,7 +1182,6 @@
+       <linkerarg value="-fpic" /> 
+       <linkerarg value="-nostdlib" />
+       <linkerarg value="-Bdynamic" />
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.linux.alpha" name="${gcc.compat.compiler}">
+@@ -1231,17 +1227,14 @@
+ 
+     <linker id="linker.cfg.solaris" name="${gcc.compat.compiler}"> 
+       <linkerarg value="-m32"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker> 
+ 
+     <linker id="linker.cfg.solaris.sparcv9" name="${gcc.compat.compiler}"> 
+       <linkerarg value="-xarch=v9a" /> 
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker> 
+ 
+     <linker id="linker.cfg.solaris.amd64" name="${gcc.compat.compiler}"> 
+       <linkerarg value="-m64"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+       <!-- linkerarg value="-xarch=amd64" / --> 
+     </linker>
+ 
+@@ -1256,7 +1249,6 @@
+       <linkerarg value="-arch" if="use.macosx64"/>
+       <linkerarg value="x86_64" if="use.macosx64"/>
+       <linkerarg value="-mmacosx-version-min=10.5"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+       <!-- Note: Apple doesn't seem to provide ppc64 binaries on Leopard -->
+     </linker>
+ 
+@@ -1265,14 +1257,12 @@
+     <!--linker id="linker.cfg.linux64.mingw64" classname="net.sf.antcontrib.cpptasks.gcc.Gcc64Linker"-->
+     <linker id="linker.cfg.linux64.mingw64" classname="net.sf.antcontrib.cpptasks.gcc.GccLinker">
+       <linkerarg value="-m64"/>
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+     
+     <!--linker id="linker.cfg.linux64.mingw32" classname="net.sf.antcontrib.cpptasks.gcc.Gcc32Linker"-->
+     <linker id="linker.cfg.linux64.mingw32" classname="net.sf.antcontrib.cpptasks.gcc.GccLinker">
+       <linkerarg value="-m32"/>
+       <linkerarg value="-Wl,--kill-at" />        <!-- remove @ from function names, ie no __stdcall @nn -->
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.win32.mingw" name="${gcc.compat.compiler}" incremental="false">
+@@ -1280,7 +1270,6 @@
+       <linkerarg value="-Wl,--enable-auto-import"/>    <!-- for linking against dll directly -->
+       <linkerarg value="-Wl,--enable-stdcall-fixup"/>  <!-- for linking against dll directly -->
+       <linkerarg value="-Wl,--kill-at" />        <!-- remove @ from function names, ie no __stdcall @nn -->
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.win64.mingw" name="${gcc.compat.compiler}" incremental="false">
+@@ -1288,7 +1277,6 @@
+       <linkerarg value="-Wl,--enable-auto-import"/>    <!-- for linking against dll directly -->
+       <linkerarg value="-Wl,--enable-stdcall-fixup"/>  <!-- for linking against dll directly -->
+       <linkerarg value="-Wl,--kill-at" />        <!-- remove @ from function names, ie no __stdcall @nn -->
+-      <linkerarg value="-static-libgcc" if="isGCC"/>
+     </linker>
+ 
+     <linker id="linker.cfg.win32.msvc" name="msvc" incremental="false">
+--- a/make/lib/gluegen-cpptasks-android-armv6.xml
++++ b/make/lib/gluegen-cpptasks-android-armv6.xml
+@@ -89,7 +89,6 @@
+          <linkerarg value="--demangle" /> 
+          <linkerarg value="--gc-sections" /> 
+          <linkerarg value="--no-undefined" /> 
+-         <linkerarg value="-static-libgcc"/>
+          <!-- The gcc from $NDK_TOOLCHAIN_ROOT/$TARGET_TRIPLE/bin needs to be told
+            where to find libgcc as the default location (gcc -print-search-dirs)
+            is not correct. Not sure if this is a bug in the NDK or not. We also
+--- a/make/lib/gluegen-cpptasks-android-armv7.xml
++++ b/make/lib/gluegen-cpptasks-android-armv7.xml
+@@ -89,7 +89,6 @@
+          <linkerarg value="--demangle" /> 
+          <linkerarg value="--gc-sections" /> 
+          <linkerarg value="--no-undefined" /> 
+-         <linkerarg value="-static-libgcc"/>
+          <!-- The gcc from $NDK_TOOLCHAIN_ROOT/$TARGET_TRIPLE/bin needs to be told
+            where to find libgcc as the default location (gcc -print-search-dirs)
+            is not correct. Not sure if this is a bug in the NDK or not. We also
+--- a/make/lib/gluegen-cpptasks-linux-armv6.xml
++++ b/make/lib/gluegen-cpptasks-linux-armv6.xml
+@@ -56,7 +56,6 @@
+       <linkerarg value="-mfloat-abi=softfp" />
+       <linkerarg value="-nostdlib" />
+       <linkerarg value="-Bdynamic" />
+-      <linkerarg value="-static-libgcc"/>
+     </linker>
+ </target>
+ 
+--- a/make/lib/gluegen-cpptasks-linux-armv6hf.xml
++++ b/make/lib/gluegen-cpptasks-linux-armv6hf.xml
+@@ -56,7 +56,6 @@
+       <linkerarg value="-mfloat-abi=hard" />
+       <linkerarg value="-nostdlib" />
+       <linkerarg value="-Bdynamic" />
+-      <linkerarg value="-static-libgcc"/>
+     </linker>
+ 
+ </target>
+--- a/make/stub_includes/platform/glibc-compat-symbols.h
++++ b/make/stub_includes/platform/glibc-compat-symbols.h
+@@ -41,6 +41,8 @@
+     #define GLIBC_COMPAT_SYMBOL(FFF)
+ #endif
+ 
++#undef GLIBC_COMPAT_SYMBOL
++#define GLIBC_COMPAT_SYMBOL(FFF)
+ GLIBC_COMPAT_SYMBOL(memcpy)
+  
+ #endif /*__GLIBC_COMPAT_SYMBOLS_H__*/
