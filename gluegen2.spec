@@ -2,7 +2,7 @@
 
 Name:           gluegen2
 Version:        2.2.4
-Release:        %mkrel 1
+Release:        1
 Summary:        Java/JNI glue code generator to call out to ANSI C
 
 Group:          Development/Java
@@ -211,20 +211,17 @@ EOF
 rm -fr %{buildroot}%{_jnidir}/test
 
 %files
-%{_docdir}/%{name}/LICENSE.txt
 %{_jnidir}/%{name}-rt.jar
 %{_libdir}/%{name}
 %{_mavenpomdir}/JPP-%{name}-rt.pom
 
 %files devel
-%{_docdir}/%{name}/LICENSE.txt
 %{_javadir}/%{name}.jar
 %{_mavenpomdir}/JPP-%{name}.pom
 %{_datadir}/maven-metadata/%{name}.xml
 %{gluegen_devel_dir}
 
 %files javadoc
-%doc LICENSE.txt
 %{_javadocdir}/%{name}/
 
 %files doc
