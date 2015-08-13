@@ -57,7 +57,7 @@ application.
 
 %package        javadoc
 Summary:        Javadoc for GlueGen2
-Group:          Documentation
+Group:          Development/Java
 BuildArch:      noarch
 
 %description    javadoc
@@ -65,7 +65,7 @@ Javadoc for GlueGen2.
 
 %package        doc
 Summary:        GlueGen's user manual
-Group:          Documentation
+Group:          Development/Java
 BuildArch:      noarch
 
 %description    doc
