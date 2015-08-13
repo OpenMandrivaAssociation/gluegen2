@@ -19,7 +19,7 @@ Patch4:         %{name}-0004-add-antlr-jar-to-all-targets.patch
 Patch5:         %{name}-0005-use-system-antlib.patch
 Patch6:         %{name}-0006-disable-static-libgcc.patch
 
-BuildRequires:  java-devel >= 1:1.6.0
+BuildRequires:  java-1.7.0-devel
 BuildRequires:  jpackage-utils
 BuildRequires:  p7zip
 BuildRequires:  ant-antlr
@@ -219,7 +219,7 @@ rm -fr %{buildroot}%{_jnidir}/test
 %files devel
 %{_javadir}/%{name}.jar
 %{_mavenpomdir}/JPP-%{name}.pom
-%{_datadir}/maven-metadata/%{name}.xml
+%_mavendepmapfragdir/%{name}
 %{gluegen_devel_dir}
 
 %files javadoc
