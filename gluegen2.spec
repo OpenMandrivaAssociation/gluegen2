@@ -1,3 +1,4 @@
+%{?_javapackages_macros:%_javapackages_macros}
 %global src_name gluegen-v%{version}
 
 Name:           gluegen2
