@@ -11,8 +11,8 @@
 -    </taskdef>
 +    <taskdef resource="net/sf/antcontrib/antlib.xml" />
  
-     <!---
-         <aapt.signed 
+     <target name="test.regexp1" >
+         <property name="jarbasename" value="gluegen-rt-android" />
 --- a/make/gluegen-cpptasks.xml
 +++ b/make/gluegen-cpptasks.xml
 @@ -20,7 +20,7 @@
