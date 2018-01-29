@@ -1,6 +1,6 @@
 --- a/src/java/com/jogamp/common/os/Platform.java
 +++ b/src/java/com/jogamp/common/os/Platform.java
-@@ -194,8 +194,7 @@ public class Platform extends PlatformPr
+@@ -302,8 +302,7 @@ public class Platform extends PlatformPr
                  }
                  _isRunningFromJarURL[0] = null != platformClassJarURI;
  
@@ -10,7 +10,7 @@
  
                  // load GluegenRT native library
                  if(_USE_TEMP_JAR_CACHE[0] && TempJarCache.initSingleton()) {
-@@ -206,7 +205,14 @@ public class Platform extends PlatformPr
+@@ -314,7 +313,14 @@ public class Platform extends PlatformPr
                          System.err.println("Caught "+e0.getClass().getSimpleName()+": "+e0.getMessage()+", while JNILibLoaderBase.addNativeJarLibs(..)");
                      }
                  }

@@ -1,2 +1,6 @@
-sources:
+removed_sources:
   gluegen-v2.2.4.tar.7z: 6176a60b0e6dd8c4f092ad97c74800bf57246671
+sources:
+  gluegen-v2.3.2.tar.xz: b18b14186d9e5910ad4e3cec03c367db4625359b
+  jcpp-v2.3.2.tar.xz: c2497132af682a6c023dda2fe550a9976dcc34d8
+
