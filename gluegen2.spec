@@ -8,7 +8,7 @@ Summary:        Java/JNI glue code generator to call out to ANSI C
 
 Group:          Development/Java
 License:        BSD
-URL:            http://jogamp.org/
+URL:            https://jogamp.org/
 Source0:        http://jogamp.org/deployment/v%{version}/archive/Sources/%{src_name}.tar.xz
 Source1:        http://jogamp.org/deployment/v%{version}/archive/Sources/jcpp-v%{version}.tar.xz
 Patch1:         %{name}-0001-renamed-library.patch
